@@ -1,0 +1,50 @@
+// C Program for addition of two matrices
+#include<stdio.h>
+int main() {
+    int i, j, mat1[10] [10], mat2[10] [10], mat3[10] [10];
+    int row1=3, col1=3, row2=3, col2=3;
+    //Accept the Elements in Matrix 1
+    for(i = 0 ; i < row1; i++) {
+         for ( j = 0 ; j < col1; j++){
+             printf("Enter the Element a[%d] [%d] : ", i, j);
+             scanf("%d", &mat1[i][j]);
+         }
+    }
+    printf("\nmat1 = \n");
+    for(i = 0 ; i < row1; i++) {
+        printf("\n");
+         for ( j = 0 ; j < col1; j++){
+             printf("%d\t" , mat1[i][j]);
+         }
+    }
+    printf("\n");
+    for(i = 0 ; i < row2; i++) {
+         for ( j = 0 ; j < col2; j++){
+             printf("Enter the Element b[%d] [%d] : ", i, j);
+             scanf("%d", &mat2[i][j]);
+         }
+    }
+    printf("\nmat2 = \n");
+    for(i = 0 ; i < row2; i++) {
+        printf("\n");
+         for ( j = 0;  j < col2; j++){
+             printf("%d\t" , mat2[i][j]);
+         }
+    }
+     //Addition of two matrices
+    for (i = 0; i < row1; i++){
+        for ( j = 0 ; j < col1; j++){
+            mat3[i][j] = mat1[i][j] + mat2[i][j];
+        }
+    }
+    //Print out the Resultant Matrix
+    printf("\nThe Addition of two Matrices is: \n");
+    for( i = 0; i < row1; i++) {
+        printf("\n");
+        for ( j = 0; j < col1; j++){
+            printf("%d\t" , mat3[i][j]);
+        }
+    }
+    
+    return 0;
+}
