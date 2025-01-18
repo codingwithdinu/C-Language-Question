@@ -1,0 +1,44 @@
+Algorithm to Determine if a Number is Prime in C (Without Using Functions):
+1. Start.
+2. Input: Read the integer n from the user.
+3. Handle special case for n <= 1:
+   If n <= 1, it is not a prime number.
+4. Check divisibility:
+   Use a loop to check if any number from 2 to sqrt(n) divides n:
+   If any number divides n (i.e., n % i == 0), then n is not prime.
+    If no number divides n, then n is prime.
+5. Output: Print whether the number n is prime or not.
+6. End.
+
+
+#include <stdio.h>
+
+int main() {
+    int n, isPrime = 1;
+
+    // Input the number
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    // Handle special cases
+    if (n <= 1) {
+        isPrime = 0;  // Numbers less than or equal to 1 are not prime
+    } else {
+        // Check divisibility from 2 to sqrt(n)
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                isPrime = 0;  // If divisible by i, it's not a prime number
+                break;  // No need to check further
+            }
+        }
+    }
+
+    // Output the result
+    if (isPrime) {
+        printf("%d is a prime number.\n", n);
+    } else {
+        printf("%d is not a prime number.\n", n);
+    }
+
+    return 0;
+}
