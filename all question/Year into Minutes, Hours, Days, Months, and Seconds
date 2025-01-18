@@ -1,0 +1,83 @@
+Algorithm to Convert a Year into Minutes, Hours, Days, Months, and Seconds Using Switch Case (Without Using Functions):
+1. Start.
+2. Input: Read the year y from the user.
+3. Input: Read the choice of conversion from the user (which unit they want the conversion in: minutes, hours, days, months, or seconds).
+             Switch Case:
+             Case 1 (for Minutes):
+                                  Calculate the number of minutes in a year: minutes = y * 365 * 24 * 60 (assuming non-leap year for simplification).
+                                  If it is a leap year, add extra days (366 days * 24 hours * 60 minutes).
+            Case 2 (for Hours):
+                                Calculate the number of hours in a year: hours = y * 365 * 24 (for a non-leap year).
+                                If it is a leap year, add 366 * 24 hours.
+            Case 3 (for Days):
+                                Calculate the number of days in a year:
+                                If it's a leap year: days = 366.
+                                  Otherwise, days = 365.
+           Case 4 (for Months):
+                                Assume 12 months in a year, so print months = 12.
+           Case 5 (for Seconds):
+                                 Calculate the number of seconds in a year: seconds = y * 365 * 24 * 60 * 60 (for a non-leap year).
+                                  If it's a leap year, add 366 * 24 * 60 * 60 seconds.
+4. Output: Print the converted value based on the user's choice.
+5. End.
+
+#include <stdio.h>
+
+int main() {
+    int year, choice;
+    int days, hours, minutes, seconds;
+
+    // Input the year from user
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    // Check if the year is a leap year
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        // Leap year has 366 days
+        days = 366;
+    } else {
+        // Non-leap year has 365 days
+        days = 365;
+    }
+
+    // Convert days to hours, minutes, and seconds
+    hours = days * 24;
+    minutes = hours * 60;
+    seconds = minutes * 60;
+
+    // Approximate months in a year (12 months)
+    
+    // Ask user to select the conversion
+    printf("\nSelect the conversion:\n");
+    printf("1. Days\n");
+    printf("2. Hours\n");
+    printf("3. Minutes\n");
+    printf("4. Seconds\n");
+    printf("5. Months\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    // Switch statement for different conversions
+    switch (choice) {
+        case 1:
+            printf("The year %d has %d days.\n", year, days);
+            break;
+        case 2:
+            printf("The year %d has %d hours.\n", year, hours);
+            break;
+        case 3:
+            printf("The year %d has %d minutes.\n", year, minutes);
+            break;
+        case 4:
+            printf("The year %d has %d seconds.\n", year, seconds);
+            break;
+        case 5:
+            // Approximate months in a year
+            printf("The year %d has 12 months.\n", year);
+            break;
+        default:
+            printf("Invalid choice! Please select a valid option.\n");
+    }
+
+    return 0;
+}
