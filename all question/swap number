@@ -1,0 +1,41 @@
+
+Algorithm to Swap Two Numbers in C:
+1. Start.
+2. Input: Read two numbers a and b from the user.
+3. Swap Process:
+    Use a temporary variable temp to hold one of the numbers.
+    Set temp = a.
+     Assign a = b.
+     Assign b = temp.
+4. Output: Print the swapped values of a and b.
+5. End.
+
+#include <stdio.h>
+
+//swappig of two number 
+
+int main(){
+
+    int a , b ,temp;
+
+    printf("enter value of a : ");
+    scanf("%d" , &a);
+
+    printf("enter value of b : ");
+    scanf("%d" , &b);
+
+    temp=a;
+
+    a=b;
+
+    b=temp;
+
+    printf("after swapping value of a and b :\n");
+
+    printf("value of a = %d\n" , a);
+
+    printf("value of b = %d\n" , b);
+
+
+    return 0;
+}
