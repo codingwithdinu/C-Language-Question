@@ -1,0 +1,29 @@
+Algorithm to Calculate the Sum of Numbers from 1 to N in C (Without Using Functions):
+1. Start.
+2. Input: Read the value of n (the upper limit) from the user.
+3. Initialize a variable sum = 0 to hold the total sum.
+4. Loop through the numbers from 1 to n:
+   For each number i, add it to sum (i.e., sum = sum + i).
+5. Output: Print the value of sum.
+6. End.
+
+
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0;
+
+    // Input the value of n
+    printf("Enter a number (n): ");
+    scanf("%d", &n);
+
+    // Loop through numbers from 1 to n and calculate sum
+    for (int i = 1; i <= n; i++) {
+        sum += i;  // Add i to sum
+    }
+
+    // Output the result
+    printf("The sum of numbers from 1 to %d is: %d\n", n, sum);
+
+    return 0;
+}
