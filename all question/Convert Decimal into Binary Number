@@ -1,0 +1,48 @@
+Algorithm to Convert Decimal into Binary Number:
+1. Start.
+2. Input: Read the decimal number n from the user.
+3. Check if n is zero: If n == 0, then the binary representation is 0.
+4. Initialize an empty string or variable to store the binary result.
+5. Loop: While n is greater than 0:
+                                   Find the remainder of n when divided by 2 (n % 2).
+                                   Append the remainder to the binary string or result.
+                                   Update n by performing integer division of n by 2 (n = n / 2).
+6. Reverse the binary string: Since the remainders are stored in reverse order (from least significant bit to most significant bit), reverse the string to get the correct binary representation.
+7. Output: Print the binary string.
+8. End.
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int decimal, i = 0;
+    int binary[32];  // Array to store binary number
+
+    // Input a decimal number
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    // Special case for 0
+    if (decimal == 0) {
+        printf("The binary representation of 0 is: 0\n");
+        return 0;
+    }
+
+    // Convert decimal to binary
+    while (decimal > 0) {
+        binary[i] = decimal % 2;  // Store remainder (binary digit)
+        decimal = decimal / 2;    // Divide the number by 2
+        i++;
+    }
+
+    // Print the binary number in reverse order
+    printf("The binary representation is: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+    printf("\n");
+
+    return 0;
+}
