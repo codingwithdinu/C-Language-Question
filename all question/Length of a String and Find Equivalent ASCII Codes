@@ -1,0 +1,42 @@
+Algorithm to Determine Length of a String and Find Equivalent ASCII Codes:
+1. Start: Begin the program.
+2. Input the String: Read the string from the user.
+3. Determine the Length:
+                         Initialize a counter variable to 0.
+                         Traverse each character of the string, increment the counter until the null character \0 (which indicates the end of the string) is encountered.
+                         The value of the counter will be the length of the string.
+4. Display the Length: Print the length of the string.
+5. Find ASCII Values:
+                     Traverse each character of the string.
+                     For each character, use the printf function to display its ASCII value using %d.
+6. End: End the program.
+
+
+
+#include <stdio.h>
+
+int main() {
+    char str[100];  // Array to store the input string
+    int i = 0, length = 0;
+
+    // Input the string
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // Read the string with spaces
+
+    // Calculate the length of the string
+    while (str[i] != '\0') {
+        length++;
+        i++;
+    }
+
+    // Output the length of the string
+    printf("Length of the string: %d\n", length - 1);  // Subtract 1 to exclude the '\0' character
+
+    // Print ASCII codes of each character in the string
+    printf("ASCII values of each character in the string:\n");
+    for (i = 0; str[i] != '\0'; i++) {
+        printf("Character: %c, ASCII Code: %d\n", str[i], str[i]);
+    }
+
+    return 0;
+}
