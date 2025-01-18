@@ -1,0 +1,42 @@
+Algorithm to Check Armstrong Numbers from 1 to 100:
+1. Start: Begin the program.
+2. Loop through numbers from 1 to 100: For each number, check if it is an Armstrong number.
+3. Armstrong Number Condition: For a number to be an Armstrong number, the sum of the cubes of its digits must be equal to the number itself.
+4. For each number:
+                   Extract the individual digits of the number.
+                   Cube each digit.
+                   Add the cubes together.
+                   Check if the sum of cubes equals the number.
+5. Display the Armstrong numbers found.
+6. End.
+
+
+
+#include <stdio.h>
+
+int main() {
+    int num, sum, digit;
+
+    printf("Armstrong numbers between 1 and 100 are:\n");
+
+    // Loop through numbers from 1 to 100
+    for(num = 1; num <= 100; num++) {
+        sum = 0;  // Initialize sum to 0
+        
+        // Extract digits and sum the cubes of digits
+        int temp = num;  // Temporary variable to hold the current number
+        
+        while(temp > 0) {
+            digit = temp % 10;  // Get the last digit
+            sum += digit * digit * digit;  // Cube the digit and add to sum
+            temp = temp / 10;  // Remove the last digit from temp
+        }
+
+        // If sum of cubes of digits equals the original number, it's an Armstrong number
+        if(sum == num) {
+            printf("%d\n", num);  // Print the Armstrong number
+        }
+    }
+
+    return 0;
+}
