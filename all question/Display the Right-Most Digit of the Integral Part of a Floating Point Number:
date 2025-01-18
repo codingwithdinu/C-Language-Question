@@ -1,0 +1,32 @@
+Algorithm to Display the Right-Most Digit of the Integral Part of a Floating Point Number::
+1. Start: Begin the program.
+2. Input the Floating-Point Number: Read a floating-point number from the user.
+3. Extract the Integral Part:
+                             Use typecasting to convert the floating-point number into an integer, which will give you the integral (whole) part of the number.
+4. Find the Right-Most Digit:
+                              Get the right-most digit of the integral part by taking the modulus of the integral part with 10 (integral_part % 10).
+5. Output the Right-Most Digit: Print the right-most digit.
+6. End: End the program.
+
+
+#include <stdio.h>
+
+int main() {
+    float num;
+    int integral_part, right_most_digit;
+
+    // Input the floating-point number
+    printf("Enter a floating-point number: ");
+    scanf("%f", &num);
+
+    // Extract the integral part by typecasting to int
+    integral_part = (int)num;
+
+    // Find the right-most digit of the integral part
+    right_most_digit = integral_part % 10;
+
+    // Output the right-most digit
+    printf("The right-most digit of the integral part is: %d\n", right_most_digit);
+
+    return 0;
+}
