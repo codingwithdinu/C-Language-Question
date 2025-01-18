@@ -1,0 +1,90 @@
+Algorithm for a Menu-Driven Program for Tea, Coffee, Milk, and Honey with Price and Quantity in C:
+1. Start.
+2. Initialize: Define variables for the price, quantity, and total price.
+3. Display Menu: Show a menu with the following options:
+            Tea
+            Coffee
+            Milk
+            Honey
+            Exit
+4. Input: Read the user's choice from the menu.
+5. Process the User's Choice:
+           For Tea (Option 1):
+                              Input the quantity of tea.
+                              Calculate the total price: total_price = price_of_tea * quantity.
+                              Display the total price for tea.
+          For Coffee (Option 2):
+                                Input the quantity of coffee.
+                                Calculate the total price: total_price = price_of_coffee * quantity.
+                                Display the total price for coffee.
+          For Milk (Option 3):
+                               Input the quantity of milk.
+                              Calculate the total price: total_price = price_of_milk * quantity.
+                                Display the total price for milk.
+         For Honey (Option 4):
+                             Input the quantity of honey.
+                             Calculate the total price: total_price = price_of_honey * quantity.
+                              Display the total price for honey.
+        For Exit (Option 5): Exit the program.
+6. Repeat: Repeat the process until the user chooses to exit.
+7. End.
+
+
+#include <stdio.h>
+
+int main() {
+    int choice, quantity;
+    float price, total_price = 0.0;
+    
+    // Display the menu
+    printf("Welcome to the Beverage Shop!\n");
+    printf("Menu:\n");
+    printf("1. Tea\n");
+    printf("2. Coffee\n");
+    printf("3. Milk\n");
+    printf("4. Honey\n");
+    printf("5. Exit\n");
+    
+    while(1) {
+        printf("\nEnter your choice (1-5): ");
+        scanf("%d", &choice);
+
+        // Check for exit condition
+        if (choice == 5) {
+            printf("Thank you for visiting! Your total is: %.2f\n", total_price);
+            break;
+        }
+
+        // Ask for the quantity
+        printf("Enter the quantity: ");
+        scanf("%d", &quantity);
+
+        switch(choice) {
+            case 1:
+                price = 10.0;  // Price of tea
+                total_price += price * quantity;
+                printf("You ordered %d Tea(s). Price: %.2f\n", quantity, price * quantity);
+                break;
+            case 2:
+                price = 15.0;  // Price of coffee
+                total_price += price * quantity;
+                printf("You ordered %d Coffee(s). Price: %.2f\n", quantity, price * quantity);
+                break;
+            case 3:
+                price = 8.0;   // Price of milk
+                total_price += price * quantity;
+                printf("You ordered %d Milk(s). Price: %.2f\n", quantity, price * quantity);
+                break;
+            case 4:
+                price = 5.0;   // Price of honey
+                total_price += price * quantity;
+                printf("You ordered %d Honey(s). Price: %.2f\n", quantity, price * quantity);
+                break;
+            default:
+                printf("Invalid choice! Please select a valid option.\n");
+                break;
+        }
+    }
+
+    return 0;
+}
