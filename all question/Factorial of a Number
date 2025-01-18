@@ -1,0 +1,29 @@
+Algorithm to Calculate the Factorial of a Number in C (Without Using Functions):
+1. Start.
+2. Input: Read the value of n from the user (where n is a non-negative integer).
+3. Initialize a variable fact = 1 to store the factorial result.
+4. Check if n is 0 or 1:
+5. If n is 0 or 1, the factorial is 1 (since 0! = 1! = 1).
+6. Loop from i = 1 to n:
+7. Multiply fact by i in each iteration.
+8. Output the value of fact (which is the factorial of n).
+9. End.
+
+
+
+#include <stdio.h>
+
+int main() {
+    
+    int n;
+    int fact=1;
+    printf("enter value of n : ");
+    scanf("%d",&n);
+    
+    for(int i=1; i<=n; i++){
+        fact = fact*i;
+    }
+    printf("factorial of %d = %d" , n ,fact);
+    
+    return 0;
+}
